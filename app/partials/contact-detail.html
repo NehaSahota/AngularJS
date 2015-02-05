@@ -1,0 +1,43 @@
+<html>
+   <head>
+
+         </head>
+            <body>
+
+
+
+                 <table border="2"  CELLSPACING="0"  align="center" class="table" >
+		            <tr bgcolor="#32A6B5">
+			             <th><b>{{contact.first}} {{contact.last}}</b></th>
+			             <th><b>Contact</b></th>
+			             <th><b>Phone Number </b></th>
+		            </tr>
+		 
+		             <td bgcolor="white"> <a href="#/contacts/{{contact.id}}"><img ng-src="{{contact.imageUrl}}"></a></td>
+		             <td width="300">&nbsp;&nbsp;<b>Department:</b> {{contact.department}}<br><br>
+		                <b>&nbsp;&nbsp;Office:</b>{{contact.office}}<br><br>
+				        <b>&nbsp;&nbsp;Manager:</b>{{contact.manager}}<br>
+				        <a href="mailto:{{contact.first+'.'+contact.last+'@lambtoncollege.ca'}}">
+				        <img src="./img/email.png" width="75" height="75"><br> Email {{contact.first}}</a>
+		             </td>
+		             </td>
+		            <td style="vertical-align:top;" class="td"><br>
+		            &nbsp;&nbsp;{{'519-542-7751 ext.'+contact.extension}}
+		            &nbsp;&nbsp;</td>
+                 </table>
+        <style> 
+			html{
+				background-image:url('./img/contact1.png')
+				
+			}
+            .table {
+			width:800px;
+			margin-top:7em;
+            background-color: white;			
+                    }
+					
+			
+			
+             </style>
+            </body>
+</html>

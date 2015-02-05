@@ -1,0 +1,42 @@
+<input ng-model ="query">
+	<select ng-model="orderProp">
+		<option value='first'>First Name</option>
+		<option value='last'>Last Name</option>
+		<option value='extension'>Extension</option>
+	</select>
+	<table border="2" class="table" style="border-spacing:0;">
+		<thead>
+			<tr style="background-color: rgb(15, 137, 239);">
+			    <th>Image</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Phone Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="contact in contacts| filter:query | orderBy: 'orderProp'" class="contact">
+			<td><a href="#/contacts/{{contact.id}}" class="thumb"><img src="{{contact.imageUrl}}"></a></td>
+				<td class='first'><a href="#/contacts/{{contact.id}}" class="thumb">{{ contact.first }}</a></td>
+				<td class='last'><a href="#/contacts/{{contact.id}}" class="thumb">{{ contact.last }}</a></td>
+				<td class='email'><a href="mailto:{{ contact.first+'.'+contact.last+'@lambtoncollege.ca' }}" > {{ contact.first+'.'+contact.last+'@lambtoncollege.ca' }}</a></td>
+				<td class='Phone Number'>{{ '519-542-7751 ext. ' + contact.extension }}</td>
+			</tr>
+		</tbody>
+		
+		<style>
+		html{
+			background-image:url('./img/list2.jpg');
+			}
+		.table {
+			width:800px;
+			margin-top:15px;
+            background-color: white;	
+				margin-left:25em;
+        }
+		input{
+			margin-left:50em;
+		}
+		
+			</style>		
+	</table>
